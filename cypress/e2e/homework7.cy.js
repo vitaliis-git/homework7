@@ -1,7 +1,10 @@
 /// <reference types="cypress"/>
+import homePage from "../support/pages/HomePage";
+import loginPage from "../support/pages/LoginPage";
 
 describe('Homework 7', () => {
   it('Registration test', () => {
+    cy.log('Open website login page');
     cy.visit('https://automationteststore.com/index.php?rt=account/create');
     cy.get('#AccountFrm_firstname').type('Vitalii');
     cy.get('#AccountFrm_lastname').type('Shvets');
@@ -25,15 +28,14 @@ describe('Homework 7', () => {
     cy.location().then(location => {
       expect(location.href).to.be.eq('https://automationteststore.com/index.php?rt=account/success');
     });
-    cy.get('span[class="maintext"]').should('include.text', 'Your Account Has Been Created!');
+    cy.get('span[class="maintext"]', {timeout: 10000}).should('include.text', 'Your Account Has Been Created!');
   })
 
 
-  it('Authorisation test', () => {
-    cy.visit('https://automationteststore.com/index.php?rt=account/login');
-    cy.get('#loginFrm_loginname').type('timcook4');
-    cy.get('#loginFrm_password').type('qwerty123');
-    cy.get('button[title="Login"]').click();
+  it('Authorization test', () => {
+    homePage.visit();
+    homePage.getLoginOrRegisterButton().click();
+    loginPage.submitLoginForm('timcook4', 'qwerty123');
 
     cy.location().then(location => {
       expect(location.href).to.be.eq('https://automationteststore.com/index.php?rt=account/account');
