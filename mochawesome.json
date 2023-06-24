@@ -1,0 +1,182 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2023-06-20T14:25:16.275Z",
+    "end": "2023-06-20T14:25:37.290Z",
+    "duration": 21015
+  },
+  "results": [
+    {
+      "uuid": "dfe8be79-72de-4058-9172-b44f9a160c2c",
+      "title": "",
+      "fullFile": "cypress/e2e/homework8.cy.js",
+      "file": "cypress/e2e/homework8.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "93bd60a8-2b56-46cd-9d66-25259696010d",
+          "title": "Homework 7",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Purchase test",
+              "fullTitle": "Homework 7 Purchase test",
+              "timedOut": null,
+              "duration": 6161,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_HomePage.default.visit();\n_HomePage.default.getLoginOrRegisterButton().click();\n_LoginPage.default.submitLoginForm('timcook4', 'qwerty123');\ncy.location().then(location => {\n  expect(location.href).to.be.eq('https://automationteststore.com/index.php?rt=account/account');\n});\ncy.get('.menu_text').eq(0).should('include.text', 'Welcome back Vitalii');\ncy.get('#categorymenu').contains('Skincare').click();\ncy.get('[class=\"thumbnails row\"]').contains('Eyes').click();\ncy.get('[title=\"Eye master\"]').click();\ncy.get('[class=\"productpagecart\"]').click();\ncy.get('#cart_quantity96').clear().type(2);\ncy.get('#cart_update').click();\ncy.get('#cart_checkout1').click();\ncy.get('#checkout_btn').click();\ncy.get('span[class=\"maintext\"]').should('include.text', ' Your Order Has Been Processed!');\ncy.location().then(location => {\n  expect(location.href).to.be.eq('https://automationteststore.com/index.php?rt=checkout/success');\n});",
+              "err": {},
+              "uuid": "124e32ba-f3a7-4017-8ba9-d738b5144265",
+              "parentUUID": "93bd60a8-2b56-46cd-9d66-25259696010d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "124e32ba-f3a7-4017-8ba9-d738b5144265"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6161,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "20353ad1-39db-4c0b-8965-9c6244d56f2e",
+      "title": "",
+      "fullFile": "cypress/e2e/homework7.cy.js",
+      "file": "cypress/e2e/homework7.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1e065c78-85ee-4772-bfe8-1733369d921d",
+          "title": "Homework 7",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Registration test",
+              "fullTitle": "Homework 7 Registration test",
+              "timedOut": null,
+              "duration": 8639,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.log('Open website login page');\ncy.visit('/');\ncy.get('#customer_menu_top').click();\ncy.get('[title=\"Continue\"]').click();\ncy.get('#AccountFrm_firstname').type(_user.default.firstName);\ncy.get('#AccountFrm_lastname').type(_user.default.lastName);\ncy.get('#AccountFrm_email').type(_user.default.email);\ncy.get('#AccountFrm_telephone').type(_user.default.phoneNumber);\ncy.get('#AccountFrm_fax').type(_user.default.fax);\ncy.get('#AccountFrm_company').type(_user.default.company);\ncy.get('#AccountFrm_address_1').type(_user.default.addressLine1);\ncy.get('#AccountFrm_address_2').type(_user.default.addressLine2);\ncy.get('#AccountFrm_city').type(_user.default.city);\ncy.get('#AccountFrm_country_id').select(_user.default.countryId);\ncy.get('#AccountFrm_zone_id').select(_user.default.zone);\ncy.get('#AccountFrm_postcode').type(_user.default.postCode);\ncy.get('#AccountFrm_loginname').type(_user.default.username);\ncy.get('#AccountFrm_password').type(_user.default.password);\ncy.get('#AccountFrm_confirm').type(_user.default.password);\ncy.get('#AccountFrm_newsletter0').check('0');\ncy.get('#AccountFrm_agree').check('1');\ncy.get('button[title=\"Continue\"]').click();\ncy.clearAllCookies();\ncy.get('span[class=\"maintext\"]', {\n  timeout: 10000\n}).should('include.text', 'Your Account Has Been Created!');\n(0, _helper.login)(_user.default);",
+              "err": {},
+              "uuid": "73831fd3-340a-4238-929a-a2c54ba97ef8",
+              "parentUUID": "1e065c78-85ee-4772-bfe8-1733369d921d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Authorization test",
+              "fullTitle": "Homework 7 Authorization test",
+              "timedOut": null,
+              "duration": 2291,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_HomePage.default.visit();\n_HomePage.default.getLoginOrRegisterButton().click();\n_LoginPage.default.submitLoginForm(_user.default.username, _user.default.password);\ncy.get('.menu_text').eq(0).should('include.text', 'Welcome back');",
+              "err": {},
+              "uuid": "76229409-6eb3-441d-b369-3001ea613303",
+              "parentUUID": "1e065c78-85ee-4772-bfe8-1733369d921d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "73831fd3-340a-4238-929a-a2c54ba97ef8",
+            "76229409-6eb3-441d-b369-3001ea613303"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10930,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

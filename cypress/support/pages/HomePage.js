@@ -1,7 +1,7 @@
 class HomePage{
     visit(){
         cy.log('Open website home page');
-        cy.visit('https://automationteststore.com/');
+        cy.visit('https://automationteststore.com');
     }
 
     getLoginOrRegisterButton(){
